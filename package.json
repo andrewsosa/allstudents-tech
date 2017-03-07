@@ -1,0 +1,22 @@
+{
+  "name": "allstudents-site",
+  "version": "1.0.0",
+  "description": "Website for allstudents.tech",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/andrewsosa001/AllStudents-Site"
+  },
+  "author": "andrewsosa001",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-pug": "^3.2.0",
+    "gulp-sass": "^3.1.0",
+    "pug": "^2.0.0-beta11"
+  }
+}
