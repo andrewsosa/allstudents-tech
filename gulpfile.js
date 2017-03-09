@@ -29,8 +29,19 @@ gulp.task('js', function() {
 gulp.task('assets', function() {
     gulp.src('src/assets/*.css')
         .pipe(gulp.dest(build + '/css/'))
+    gulp.src('src/assets/favicons/*')
+        .pipe(gulp.dest(build + '/assets/favicon/'))
+
+
 });
 
+// Designated image task
+gulp.task('images', function() {
+    const imagemin = require('gulp-imagemin');
+    gulp.src('src/assets/img/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest(build + '/img/'))
+})
 
 // Removes built files
 gulp.task('clean', function() {
