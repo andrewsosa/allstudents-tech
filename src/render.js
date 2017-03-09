@@ -1,28 +1,46 @@
+$("#header h1").html("")
+$("#header h2").html("")
+$("#header button").css({opacity: 0})
+
 $(() => {
 
-        $.chain = function() {
-            var promise = $.Deferred().resolve().promise();
-            jQuery.each(arguments, () => {
-                promise = promise.pipe(this);
-            });
-            return promise;
-        };
 
-        let animations = $.chain(() => {
-            return $("h1").typed({
-                strings: ["allstudents.tech ^1000", "(( allstudents.tech ))"]
-            });
-        }, () => {
-            return $("h2").typed({
-                strings: ["a network of sponsors in tech space \n who want your student group to suceed"]
-            })
+    let type_h1 = function() {
+        $("#header h1").typed({
+                strings: ["Students(q='tech').all() ^1000", "(( allstudents.tech ))"],
+                callback: type_h2
+        });
+    }
+
+    let type_h2 = function() {
+        $("#header h2").typed({
+            strings: ["a network of sponsors in tech space <br> who want your student group to suceed ^300"],
+            callback: ping_btn
         })
+    }
 
-        $.when(animations).done(() => {
-            console.log("All animations complete!")
-            $(".material-ripple").click()
+    let ping_btn = function () {
+        $("#header button").css({opacity: 1}).triggerHandler("click")
+    }
 
-        })
+    type_h1()
+
+        // $("h1").typed({
+        //         strings: ["allstudents.tech ^1000", "(( allstudents.tech ))"]
+        //         callback:
+        // });
+        //
+        // // $("h2").typed({
+        // //     strings: ["a network of sponsors in tech space \n who want your student group to suceed"]
+        // // })
+        //
+        //
+        // // Flicker button on load
+        // setTimeout(() => {
+        //     $(".material-ripple").triggerHandler("click")
+        // }, 3000)
 
 
-    });
+
+
+});

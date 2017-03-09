@@ -1,5 +1,6 @@
 html
   head
+    title All Students.Tech
     block styles
       link(rel="stylesheet", href="./css/index.css")
       link(rel="stylesheet", href="./css/ripple.min.css")
@@ -16,7 +17,12 @@ html
             | who want your student group to suceed
           //- button.md-button apply now
           //- h3 or
-          button.md-button.material-ripple join our sponsors
+          a(href="mailto:team@allstudents.tech")
+            button.md-button.material-ripple() join our network
+        .container.header-bottom
+            p Copyright © 2017 All Students. All rights reserved.
+            a(href="mailto:team@allstudents.tech")
+              p team@allstudents.tech
 
     block scripts
       script(src="./js/jquery.min.js")
