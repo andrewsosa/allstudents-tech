@@ -1,14 +1,15 @@
 // Multiple font requests on a single line (saves time!)
 @import url('https://fonts.googleapis.com/css?family=Montserrat:700|Roboto:400,500')
 
-@font-face
-    font-family: 'Avenir Next'
-    src: local('Avenir Next')
+// @font-face
+//     font-family: 'Avenir Next'
+//     src: local('Avenir Next')
 
 
 // Dynamic font size definitions
-$h1-size:   (null: 3rem, 550px: 4rem, 1200px: 6.5rem)
-$h2-size:   (null: 2rem, 550px: 3rem, 1200px: 5rem)
+$h1-size:   (null: 3rem, 600px: 4rem, 1200px: 6.5rem)
+$h2-size:   (null: 2rem, 600px: 3rem, 1200px: 5rem)
+$bt-size:   (null: 2rem, 600px: 2rem, 1200px: 3.5rem)
 
 @mixin font-size($fs-map)
     @each $fs-breakpoint, $fs-font-size in $fs-map
@@ -21,7 +22,7 @@ $h2-size:   (null: 2rem, 550px: 3rem, 1200px: 5rem)
 
 // Font defs
 $body:      'Roboto', sans-serif
-$brand:     'Avenir', sans-serif
+$brand:     'Avenir', 'Montserrat', sans-serif
 
 @mixin font($family, $size, $weight: 500, $color: #000)
     font-family: $family
@@ -39,6 +40,6 @@ h2, h3
     @include font-size($h2-size)
 
 #header button
-    @include font($brand, 5rem, 900, $primary-text)
-    @include font-size($h2-size)
+    @include font($brand, 4rem, 900, $primary-text)
+    @include font-size($bt-size)
     text-transform: lowercase

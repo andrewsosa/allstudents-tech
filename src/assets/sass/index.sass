@@ -1,34 +1,71 @@
 // Style dependencies
 @import "includes/bootstrap-custom"
-@import "includes/css3-mixins.sass"
-@import "includes/color.sass"
-@import "includes/type.sass"
-@import "includes/generics.sass"
+@import "includes/css3-mixins"
+@import "includes/breakpoints"
+@import "includes/color"
+@import "includes/type"
+@import "includes/generics"
 
 .typed-cursor
     display: none
 
 
 #header
-    background-color: $primary
+    // background-color: $primary
+    background: linear-gradient(to top, rgba(9, 32, 62, 0.5) 0%, rgba(83, 120, 149, 0.5) 100%), url('../img/sai-kiran-anagani-61187.min.jpg')
+    background-size: cover
+
+    // background: linear-gradient(to top, rgba(72, 198, 239, 0.3) 0%, rgba(111, 134, 214, 0.3) 100%), url('../img/sai-kiran-anagani-61187.min.jpg')
+    // background-image: linear-gradient(to top, rgb(9, 32, 62, 0.3) 0%, rgb(83, 120, 149, 0.3) 100%), url('../img/sai-kiran-anagani-61187.min.jpg')
+    // background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%)
+    // background-image: linear-gradient(to top, #a3bded 0%, #6991c7 100%)
+    //background-image: linear-gradient(to bottom, #4481eb 0%, #04befe 100%)
+    min-width: 430px
+
 
 .header-wrap
     display: flex
     flex-direction: column
     align-items: center
-    justify-content: center
-
+    // justify-content: center
+    @include text-shadow(0,0, 10px, rgba(0,0,0,.2))
 
     min-height: 100%
-    // padding-top: 148px
-
     text-align: center
+
+    padding-top: 148px
+    @include for-desktop-up
+        padding-top: 112px
+
+
+    h1, h2
+        transition: all .3s ease-out
 
     h2
         margin: 48px auto
 
     button
-        padding: 32px 32px
+        padding: 12px 32px
+        background-color: $accent
 
         &:hover
             background-color: $accent
+
+        @include for-tablet-portrait-up
+            padding: 16px 32px
+
+        @include for-desktop-up
+            padding: 32px 32px
+
+
+.header-bottom
+    position: absolute
+    bottom: 16px
+    left: 0
+    right: 0
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+
+    p
+        @include font($brand, 12px, 900, $white)
